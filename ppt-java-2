@@ -1,0 +1,210 @@
+What are the Conditional Operators in Java?
+In Java, the conditional operators are:
+
+1. Ternary Operator (? :): It is the only conditional operator in Java that takes three operands. It is used to evaluate a boolean expression and return one of two values based on the result. The syntax is: `condition ? expression1 : expression2`. If the condition is true, expression1 is evaluated and returned; otherwise, expression2 is evaluated and returned.
+
+2. Logical AND Operator (&&): It performs a logical AND operation between two boolean operands. It returns true if both operands are true; otherwise, it returns false. The operator short-circuits, meaning if the first operand is false, the second operand is not evaluated.
+
+3. Logical OR Operator (||): It performs a logical OR operation between two boolean operands. It returns true if at least one of the operands is true; otherwise, it returns false. The operator short-circuits, meaning if the first operand is true, the second operand is not evaluated.
+
+4. Logical NOT Operator (!): It performs a logical negation on a boolean operand. It returns true if the operand is false and false if the operand is true. It is a unary operator, meaning it operates on a single operand.
+
+These operators are used to create conditional expressions and make decisions based on the result of boolean evaluations.
+##################################################################################################################################
+Q2. What are the types of operators based on the number of operands?
+Unary Operators: These operators work with only one operand. Examples include the increment and decrement operators (++ and --), logical negation (!), and unary minus (-).
+
+Binary Operators: These operators work with two operands. Examples include arithmetic operators (+, -, *, /, %), assignment operators (=, +=, -=), comparison operators (==, !=, <, >, <=, >=), and logical operators (&&, ||).
+
+Ternary Operator: This operator is unique as it takes three operands. It is used to evaluate a boolean expression and return one of two values based on the result. The syntax is condition ? expression1 : expression2.
+#####################################################################################################################################3
+Q3 What is the use of Switch case in Java programming
+The switch case statement in Java is used to perform different actions based on different values of a variable. It provides a convenient way to write branching code when there are multiple possible conditions. The switch case statement evaluates an expression and compares it against multiple cases. When a match is found, the corresponding block of code is executed.
+
+The main use cases of the switch case statement are:
+
+To replace multiple if-else if statements when checking the same variable against different values.
+To improve code readability and maintainability by grouping related conditions together.
+To handle menu-driven programs or user input with specific choices.
+To perform different actions based on the value of an enumerated type.
+#####################################################################################################################################3
+Q4.What are the conditional Statements and use of conditional statements in Java
+Conditional statements in Java are used to control the flow of execution based on certain conditions. They allow the program to make decisions and execute different blocks of code depending on the outcome of boolean expressions.
+
+The main conditional statements in Java are:
+
+if statement: It executes a block of code if a specified condition is true.
+if-else statement: It executes one block of code if a condition is true and another block if the condition is false.
+if-else if-else statement: It allows checking multiple conditions and executing different blocks of code based on the first true condition.
+switch case statement: It evaluates an expression and executes the code block associated with the matching case.
+Conditional statements are essential for implementing decision-making logic and controlling program flow based on specific conditions.
+#####################################################################################################################################3
+Q5.What is the syntax of if else statement?
+The if-else statement in Java allows executing different blocks of code based on a condition. The syntax is as follows:
+
+java code
+if (condition) {
+    // Code to execute if the condition is true
+} else {
+    // Code to execute if the condition is false
+}
+The condition is a boolean expression that is evaluated.
+If the condition is true, the code block within the if statement is executed.
+If the condition is false, the code block within the else statement is executed (optional).
+Note: The else block is not mandatory. If it is omitted, the code block within the if statement is executed if the condition is true, and no code is executed if the condition is false.
+#####################################################################################################################################3
+Q6.How do you compare two strings in Java?
+In Java, you can compare two strings using the `equals()` method or the `compareTo()` method. Here's how you can use each method for string comparison:
+
+1. Using the `equals()` method:
+   - The `equals()` method compares the contents of two strings to determine if they are equal.
+   - It returns a boolean value (`true` if the strings are equal, `false` otherwise).
+   - The comparison is case-sensitive, so "Hello" and "hello" would be considered different strings.
+   - Example:
+
+     ```java
+     String str1 = "Hello";
+     String str2 = "World";
+     
+     if (str1.equals(str2)) {
+         System.out.println("Strings are equal");
+     } else {
+         System.out.println("Strings are not equal");
+     }
+     ```
+
+2. Using the `compareTo()` method:
+   - The `compareTo()` method compares two strings lexicographically (i.e., based on their dictionary order).
+   - It returns an integer value:
+     - If the strings are equal, it returns `0`.
+     - If the calling string is lexicographically less than the argument string, it returns a negative value.
+     - If the calling string is lexicographically greater than the argument string, it returns a positive value.
+   - The comparison is case-sensitive.
+   - Example:
+
+     ```java
+     String str1 = "Apple";
+     String str2 = "Banana";
+     
+     int result = str1.compareTo(str2);
+     
+     if (result == 0) {
+         System.out.println("Strings are equal");
+     } else if (result < 0) {
+         System.out.println("String 1 is lexicographically less than String 2");
+     } else {
+         System.out.println("String 1 is lexicographically greater than String 2");
+     }
+     ```
+
+It's important to note that when comparing strings in Java, you should always use the `equals()` method or the `compareTo()` method instead of the `==` operator. The `==` operator checks for reference equality, not string content equality.
+#####################################################################################################################################3
+Q7.What is Mutable String in Java Explain with an example
+In Java, strings are immutable by default, which means their values cannot be changed once they are created. However, there is a mutable alternative to the immutable `String` class called `StringBuilder`.
+
+The `StringBuilder` class in Java provides a mutable sequence of characters, allowing you to modify the content of a string without creating a new object. You can append, insert, or delete characters from a `StringBuilder` object.
+
+Here's an example to illustrate the use of `StringBuilder` as a mutable string:
+
+```java
+StringBuilder sb = new StringBuilder("Hello");
+System.out.println("Original StringBuilder: " + sb);
+
+// Appending characters
+sb.append(" World");
+System.out.println("After appending: " + sb);
+
+// Inserting characters at a specific position
+sb.insert(5, " Java");
+System.out.println("After inserting: " + sb);
+
+// Deleting characters
+sb.delete(5, 10);
+System.out.println("After deleting: " + sb);
+
+// Updating characters at a specific position
+sb.setCharAt(0, 'h');
+System.out.println("After updating: " + sb);
+
+// Converting StringBuilder to a regular String
+String result = sb.toString();
+System.out.println("Final String: " + result);
+```
+
+Output:
+```
+Original StringBuilder: Hello
+After appending: Hello World
+After inserting: Hello Java World
+After deleting: Hello World
+After updating: hello World
+Final String: hello World
+```
+
+In the example above, we start with a `StringBuilder` object containing the string "Hello". We then demonstrate various operations such as appending, inserting, deleting, and updating characters. Finally, we convert the `StringBuilder` back to a regular `String` using the `toString()` method.
+
+Using `StringBuilder` can be beneficial when you need to perform multiple modifications on a string, as it avoids the overhead of creating new `String` objects with each modification.
+#####################################################################################################################################3
+Q8.Write a program to sort a String Alphabetically
+import java.util.Arrays;
+
+public class StringSortExample {
+    public static void main(String[] args) {
+        String input = "openai";
+        
+        // Convert the string to char array
+        char[] charArray = input.toCharArray();
+        
+        // Sort the char array
+        Arrays.sort(charArray);
+        
+        // Create a new string from the sorted char array
+        String sortedString = new String(charArray);
+        
+        // Print the sorted string
+        System.out.println("Sorted String: " + sortedString);
+    }
+}
+
+#####################################################################################################################################3
+Q9.Write a program to check if the letter 'e' is present in the word 'Umbrella
+public class LetterCheckExample {
+    public static void main(String[] args) {
+        String word = "Umbrella";
+        
+        // Convert the word to lowercase for case-insensitive comparison
+        word = word.toLowerCase();
+        
+        // Check if the letter 'e' is present in the word
+        boolean isPresent = false;
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == 'e') {
+                isPresent = true;
+                break;
+            }
+        }
+        
+        // Print the result
+        if (isPresent) {
+            System.out.println("The letter 'e' is present in the word 'Umbrella'.");
+        } else {
+            System.out.println("The letter 'e' is not present in the word 'Umbrella'.");
+        }
+    }
+}
+
+#####################################################################################################################################3
+Q10.Where exactly is the string constant pool located in the memory?
+In Java, the string constant pool is a special area of memory where string literals are stored. It is part of the Java Runtime Environment (JRE) and is located in the heap memory area.
+
+The heap memory is a region of memory where objects are allocated dynamically during runtime. Within the heap, the string constant pool is a separate area that stores unique string literals to optimize memory usage.
+
+When you declare a string literal in your code, such as `"Hello"`, Java checks if an identical string already exists in the constant pool. If it does, the reference to the existing string is returned. If not, a new string is created and added to the pool.
+
+The string constant pool is shared among all instances of a Java program and is managed by the JVM. It allows for efficient memory usage by reusing string objects whenever possible.
+
+It's important to note that not all strings in Java are stored in the constant pool. Strings created using the `new` keyword, such as `new String("Hello")`, are stored in the regular heap memory and not in the constant pool.
+#####################################################################################################################################3
+
+#####################################################################################################################################3
+
